@@ -9,14 +9,17 @@ Goldman Sachs (SIC 62) wants to know wether the stock market reacts to earnings 
 ## Main result
 
 The High SUE groups do not differ clearly between the industries: brokers beat the market by 2.55 pp and medical by 1.72 pp, and the intervals overlap. The Low SUE groups differ more. Medical stocks underpeform the market by 2.01 pp on average, brokers by only 0.27 pp, and these intervals do not overlap. The High minus Low gap is larger in medical (3.72 pp against 2.82 pp), but I can´t show that this difference of 0.90 pp is real. I calculated these comparisons by hand from the confidenc intervals in Figure 1.
+![Figure 1](figures/figure1.png)
 
 ## Is the difference real?
 
 A t-test of High vs Low gives a difference of 2.82 pp for brokers (t = 4.49, p < 0.0001) and 3.72 pp for medical (t = 6.03, p < 0.0001). In the regresion CAR = a + b x SUE, b is 0.125 for brokers (p < 0.0001) and 0.090 for medical (p = 0.0897). A 1 pp higher SUE goes with a 0.125 pp higher CAR in brokers. R-squared is 2.3% and 0.2%, so SUE explains little of the variation. With year fixed effects b barely changes (0.119 and 0.089). The medical slope is significant at the 10% level but not at 5%, and it is not significant in the model with the loss interaction, so I do not build a claim on it.
+![Figure 2](figures/figure2.png)
 
 ## Why the industries differ
 
 I checked whether loss-making quarters explain the difference. 9.6% of broker announcements and 27.8% of medical announcements have negative EPS. If losses made SUE less informative in medical, the slopes shoud become more alike without them. They did not: the gap in slope grew from 0.035 to 0.119. The reason is not supported. The confidence intervals overlap in both samples.
+![Figure 3](figures/figure3.png)
 
 ## Advice for the client
 
@@ -33,6 +36,7 @@ I checked whether loss-making quarters explain the difference. 9.6% of broker an
 ## How the tables fit together
 
 Compustat quarters are linked to CRSP with gvkey and the link file, keeping the link that was valid on the quarter-end date. Last year's EPS and last quarter's price are added with gvkey and quarter number. Stock returns, market returns and the three-day window are matched on permno and trading-day number.
+![Merge map](figures/merge_map.png)
 
 ## How I checked the results
 
